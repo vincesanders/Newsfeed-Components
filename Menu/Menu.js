@@ -18,8 +18,31 @@ let menuItems = [
       {each menu item as a list item}
     </ul>
   </div>
+*/
 
-  The function takes an array as its only argument.
+function menuCreator(data) {
+  let menu = document.createElement('div');
+  menu.classList.add('menu');
+  let list = menu.appendChild(document.createElement('ul'));
+  for(item of data) {
+    //this[varName] = blahBlah creates a variable within the function of varName.menu--open
+    //It can be used to dynamically create var names
+    //To do this in the global context, you can use window[varName].
+    // this[item.toLowerCase()] = document.createElement('li').append(item);
+    // this[item.toLowerCase()].textContent = item;
+    list.appendChild(document.createElement('li')).append(item);
+  }
+  
+  document.querySelector('.menu-button').addEventListener('click', e => {
+    menu.classList.toggle('menu--open');
+  });
+
+  return menu;
+}
+
+document.querySelector('body').prepend(menuCreator(menuItems));
+
+/*  The function takes an array as its only argument.
 
   Step 2: Inside this function, iterate over the array creating a list item <li> element for each item in the array. 
   Add those items to the <ul>
