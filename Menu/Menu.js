@@ -22,14 +22,10 @@ let menuItems = [
 
 function menuCreator(data) {
   let menu = document.createElement('div');
-  menu.classList.add('menu');
   let list = menu.appendChild(document.createElement('ul'));
+  menu.classList.add('menu');
+
   for(item of data) {
-    //this[varName] = blahBlah creates a variable within the function of varName.menu--open
-    //It can be used to dynamically create var names
-    //To do this in the global context, you can use window[varName].
-    // this[item.toLowerCase()] = document.createElement('li').append(item);
-    // this[item.toLowerCase()].textContent = item;
     list.appendChild(document.createElement('li')).append(item);
   }
   

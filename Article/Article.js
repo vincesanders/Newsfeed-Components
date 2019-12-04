@@ -122,18 +122,20 @@ const data = [
 
 function articleCreator(data) {
   let container = document.createElement('div');
-  let title = document.createElement('h2');
   let date = document.createElement('p');
-  let p1 = document.createElement('p');
-  let p2 = document.createElement('p');
-  let p3 = document.createElement('p');
   let button = document.createElement('span');
 
   container.classList.add('article');
   date.classList.add('date');
   button.classList.add('expandButton');
 
-  container.append(title, date, p1, p2, p3, button);
+  container.append(
+    document.createElement('h2'), 
+    date, 
+    document.createElement('p'), 
+    document.createElement('p'), 
+    document.createElement('p'), 
+    button);
 
   let articleChildren = container.children;
 
